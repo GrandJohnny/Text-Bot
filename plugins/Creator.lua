@@ -1,8 +1,8 @@
 do
 
 function run(msg, matches)
-  local text = [[ *This Robot is Created By* [MrJacki](http://telegrame/MrJacki) *!* ]]
-send_api_msg(msg, get_receiver_api(msg), text, true, 'md')
+  local creator = [[ *This Robot is Created By* [MrJacki](http://telegrame/MrJacki) *!* ]]
+send_api_msg(msg, get_receiver_api(msg), creator, true, 'md')
 end
 return {
   description = "Shows Bot Creator", 
