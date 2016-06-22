@@ -1,16 +1,22 @@
-do
-
-function run(msg, matches)
-  local creator = [[ *This Robot is Created By* [MrJacki](http://telegrame/MrJacki) *!* ]]
-send_api_msg(msg, get_receiver_api(msg), creator, true, 'md')
+local function do_keyboard_buygroup()
+    local keyboard = {}
+    keyboard.inline_keyboard = {
+    {
+                {text = 'MrJacki', url = 'http://telegram.me/MrJacki'},
+      },
+    {
+                {text = 'PrivateBot', url = 'http://telegram.me/MrJackiRobot'},
+      },
+    }
+    return keyboard
+end
+local function run(msg,matches)
+local keyboard = do_keyboard_buygroup()
+ send_api_keyboard(msg, get_receiver_api(msg), 'This Robot Created By MrJacki', keyboard)
 end
 return {
-  description = "Shows Bot Creator", 
-  usage = "/creator: Shows Bot Creator",
-  patterns = {
-    "^/creator$",
-  }, 
-  run = run 
+patterns = {
+"/creator"
+},
+run = run,
 }
-
-end
