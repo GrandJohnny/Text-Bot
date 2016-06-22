@@ -2,7 +2,7 @@ do
 
 function run(msg, matches)
   local help = [[ *Help Text* ]]
-send_api_msg(msg, get_receiver_api(msg), help, true, 'md')
+send_api_msg(msg, get_receiver_api(msg), help, true, 'html')
 end
 return {
   description = "Shows Bot Help Text", 
