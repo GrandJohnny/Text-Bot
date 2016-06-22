@@ -975,3 +975,10 @@ function send_api_msg(msg, receiver, text, disable_web_page_preview, markdown)
     reply_msg(msg.id, 'Error 400.\nWhat ever that means...', ok_cb, true) 
   end 
 end 
+function send_api_keyboard(msg, receiver, text, keyboard)
+  local url_api = 'https://api.telegram.org/bot'.._config.bot_api.key..'/sendMessage?chat_id='.. receiver..'&parse_mode=markdown&&text='..URL.escape(text)..'&disable_web_page_preview=true&reply_markup='..json:encode(keyboard)
+  local dat, res = https.request(url_api)
+  if res == 400 then
+    reply_msg(msg.id, 'Error 400.\nWhat ever that means...', ok_cb, true)
+  end
+  end
