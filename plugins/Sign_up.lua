@@ -2,7 +2,7 @@ local function run(msg, matches)
   
   local signin = "*Your Have an Account!*"
   local user = msg.from.id
-  checkuser = io.popen("less Text/Users/"..user.."/.check"):read('*all')
+  local checkuser = io.popen("less Text/Users/"..user.."/.check"):read('*all')
   
  if checkuser == "user="..msg.from.id then
     send_api_msg(msg, get_receiver_api(msg), singin, true, 'md')
