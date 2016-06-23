@@ -7,6 +7,10 @@ local signup = "*Your Don't Have an Account!*"
  if not checkuser == "user="..msg.from.id then
           send_api_msg(msg, get_receiver_api(msg), singup, true, 'md')
     end
+    local err == "_You Can't Set Format!_"
+    if matches[1] == "(.*).(.*)" then
+      send_api_msg(msg, get_receiver_api(msg), err, true, 'md')
+      end
     local text = matches[2]
   local b = 1
   while b ~= 0 do
