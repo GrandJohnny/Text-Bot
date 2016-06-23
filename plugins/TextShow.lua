@@ -12,6 +12,7 @@ local signup = "*Your Don't Have an Account!*"
     local checkerror = io.popen("less Text/Users/"..user3.."/"..matches[1]..".txt"):read('*all')
          if not checkerror == "(.*)" then
          send_api_msg(msg, get_receiver_api(msg), error, true, 'md')
+         end
     local user3 = msg.from.id
 local show = io.popen("less Text/Users/"..user3.."/"..matches[1]..".txt"):read('*all')
   local showtext = "_"..matches[1].."_: \n"..show
