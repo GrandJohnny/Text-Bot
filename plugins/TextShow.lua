@@ -1,6 +1,6 @@
 local function run(msg, matches)
 
-local signup = "*Your Don't Have an Account!*"
+local signup = "*You Don't Have an Account!*"
   local user = msg.from.id
    local checkuser = io.popen("less Text/Users/"..user.."/.check"):read('*all')
   
