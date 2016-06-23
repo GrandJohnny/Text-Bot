@@ -1,6 +1,6 @@
 local function run(msg, matches)
   
-  local signin = "*Your Have an Account!*"
+  local signin = "*You Have an Account!*"
   local user = msg.from.id
   local checkuser = io.popen("less Text/Users/"..user.."/.check"):read('*all')
   
