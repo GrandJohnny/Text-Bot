@@ -27,8 +27,6 @@ local text = "user="..msg.from.id
  end 
       
 return {
-  description = "Shows Bot Help Text", 
-  usage = "/help: Shows Bot Help Text",
   patterns = {
     "^/sign_up",
   }, 
