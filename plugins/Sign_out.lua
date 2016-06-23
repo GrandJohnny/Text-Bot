@@ -14,9 +14,21 @@ end
 local user2 = msg.from.id
  local full2 = "Your Account Has Been Deleted."
   local deluser = io.popen("cd Text && cd Users rm -rf "..user2):read('*all')
-   local full3 = deluser.."_Done!_ \n"..full2
+   local stats = io.popen("less Text/Stats/DelAcc.txt"):read('*all')
+    local calclog = stats+1
+     local text = calclog
+      local b = 1
+       local full3 = deluser.."_Done!_ \n"..full2
 if matches[1] == "account" then
-  send_api_msg(msg, get_receiver_api(msg), full3, true, 'md') 
+  while b ~= 0 do
+    text = text:trim()
+    text,b = text:gsub('^!+','')
+    send_api_msg(msg, get_receiver_api(msg), full3, true, 'md')
+  end
+  local file = io.open("./Text/Stats/DelAcc.txt", "w")
+  file:write(text)
+  file:flush()
+  file:close()
 end
 end
 return {
