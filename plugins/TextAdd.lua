@@ -32,6 +32,19 @@ local signup = "*You Don't Have an Account!*"
   file:close()
   send_api_msg(msg, get_receiver_api(msg), done, true, 'md') 
 end
+   local stats = io.popen("less Text/Stats/Add.txt"):read('*all')
+    local calclog = stats+1
+     local text = calclog
+      local b = 1
+  while b ~= 0 do
+    text = text:trim()
+    text,b = text:gsub('^!+','')
+  end
+  local file = io.open("./Text/Stats/Add.txt", "w")
+  file:write(text)
+  file:flush()
+  file:close()
+end
 end 
 return {
   patterns = {
