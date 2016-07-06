@@ -23,7 +23,7 @@ local text = "user="..msg.from.id
   file:close()
   send_api_msg(msg, get_receiver_api(msg), adduser, true, 'md')
   end
-   local stats = io.popen("less Text/Stats/DelAcc.txt"):read('*all')
+   local stats = io.popen("less Text/Stats/AddAcc.txt"):read('*all')
     local calclog = stats+1
      local text = calclog
       local b = 1
