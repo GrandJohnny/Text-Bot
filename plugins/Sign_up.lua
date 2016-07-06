@@ -22,8 +22,20 @@ local text = "user="..msg.from.id
   file:flush()
   file:close()
   send_api_msg(msg, get_receiver_api(msg), adduser, true, 'md')
-  
-    end
+  end
+   local stats = io.popen("less Text/Stats/AddAcc.txt"):read('*all')
+    local calclog = stats+1
+     local text = calclog
+      local b = 1
+  while b ~= 0 do
+    text = text:trim()
+    text,b = text:gsub('^!+','')
+  end
+  local file = io.open("./Text/Stats/AddAcc.txt", "w")
+  file:write(text)
+  file:flush()
+  file:close()
+end
  end 
       
 return {
