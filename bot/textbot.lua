@@ -212,6 +212,10 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
+    	"Creator",
+    	"",
+    	"",
+    	"",
 	"Plugins"
     },
     sudo_users = {190142886},--Sudo users
